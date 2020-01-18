@@ -3,5 +3,36 @@
 {% block title %} Lista de Tarefas {% endblock %}
 
 {% block content %}
-    <h1>Lista de Tarefas</h1>
+    <div class="offset-1 col-10 list-div">
+        <h1>Lista de Tarefas</h1>
+        <div class="col-2 add-div">
+            <i class="fi-swluxl-plus-solid"></i>Adicionar
+        </div>
+        <div class="col-8 search-div">
+            <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa...">
+            <i class="fi-xnsuxl-search"></i>
+        </div>
+        <ul class="task-list">
+            <li class="task-item">
+                <span>Título da tarefa</span>
+                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
+                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
+            </li>
+            <li class="task-item">
+                <span>Título da tarefa</span>
+                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
+                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
+            </li>
+            <li class="task-item">
+                <span>Título da tarefa</span>
+                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
+                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
+            </li>
+            <li class="task-item">
+                <span>Título da tarefa</span>
+                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
+                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
