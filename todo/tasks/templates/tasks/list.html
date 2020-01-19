@@ -25,10 +25,23 @@
             {% for task in tasks %}
             <li class="task-item">
                 <span><a href="/task/{{task.id}}">{{ task.title }}</a></span>
-                <a href="delete/{{task.id}}"> <span> <i class="fi-xnsuxl-trash-bin"></i> </span> </a>
+                <a href="delete/{{task.id}}" class="delete-btn"> <span> <i class="fi-xnsuxl-trash-bin"></i> </span> </a>
                <a href="edit/{{task.id}}"> <span> <i class="fi-xnsuxl-edit-solid"></i> </span> </a>
             </li>
             {% endfor %}
         </ul>
+        <div class="pagination">
+            <span class="step-links">
+                {% if tasks.has_previous %}
+                    <a href="?page={{ tasks.previous_page_number }}"><i class="fi-twslxl-triangle"></i></a>
+                {% endif %}
+                <span class="current">
+                    {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+                </span>
+                {% if tasks.has_next %}
+                    <a href="?page={{ tasks.next_page_number }}"><i class="fi-ttsrxl-triangle"></i></a>
+                {% endif %}
+            </span>
+        </div>
     </div>
 {% endblock %}
