@@ -5,10 +5,18 @@ from .models import Task
 from django.contrib import messages
 
 def taskList(request):
-    tasks_list = Task.objects.all().order_by('-create_at')
-    paginator = Paginator(tasks_list, 4)
-    page = request.GET.get('page')
-    tasks = paginator.get_page(page)
+    search = request.GET.get('search')
+    if search:
+        tasks_list = Task.objects.filter(title__icontains=search)
+        paginator = Paginator(tasks_list, 4)
+        page = request.GET.get('page')
+        tasks = paginator.get_page(page)
+    else:
+        tasks_list = Task.objects.all().order_by('-create_at')
+        paginator = Paginator(tasks_list, 4)
+        page = request.GET.get('page')
+        tasks = paginator.get_page(page)
+        
     return render(request, 'tasks/list.html',{'tasks':tasks})
 
 def newTask(request):
