@@ -13,26 +13,13 @@
             <i class="fi-xnsuxl-search"></i>
         </div>
         <ul class="task-list">
+            {% for task in tasks %}
             <li class="task-item">
-                <span>Título da tarefa</span>
+                <span><a href="/task/{{task.id}}">{{ task.title }}</a></span>
                 <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
                 <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
             </li>
-            <li class="task-item">
-                <span>Título da tarefa</span>
-                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
-                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
-            </li>
-            <li class="task-item">
-                <span>Título da tarefa</span>
-                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
-                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
-            </li>
-            <li class="task-item">
-                <span>Título da tarefa</span>
-                <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
-                <span> <i class="fi-xnsuxl-edit-solid"></i> </span>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 {% endblock %}
