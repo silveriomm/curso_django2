@@ -9,12 +9,12 @@ from django.contrib import messages
 def taskList(request):
     search = request.GET.get('search')
     if search:
-        tasks_list = Task.objects.filter(title__icontains=search)
+        tasks_list = Task.objects.filter(title__icontains=search, user=request.user)
         paginator = Paginator(tasks_list, 4)
         page = request.GET.get('page')
         tasks = paginator.get_page(page)
     else:
-        tasks_list = Task.objects.all().order_by('-create_at')
+        tasks_list = Task.objects.all().order_by('-create_at').filter(user=request.user)
         paginator = Paginator(tasks_list, 4)
         page = request.GET.get('page')
         tasks = paginator.get_page(page)
@@ -28,6 +28,7 @@ def newTask(request):
         if form.is_valid():
             task = form.save(commit=False)
             task.done = 'doing'
+            task.user = request.user
             task.save()
             messages.info(request, 'Tarefa adicionada com sucesso!')
             return redirect('/')

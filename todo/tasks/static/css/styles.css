@@ -139,3 +139,8 @@ ul.messages {
 .container-fluid .row {
     margin: 0;
 }
+
+.change-form-p {
+    margin-top: 30px;
+    text-align: center;
+}
