@@ -48,6 +48,10 @@
     margin-left: 10px;
 }
 
+#add-link {
+    text-decoration: none;
+}
+
 .fi-xnsuxl-search {
     position: absolute;
     top: 12px;
