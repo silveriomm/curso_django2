@@ -135,3 +135,7 @@ ul.messages {
 .login-card {
     margin-bottom: 30px;
 }
+
+.container-fluid .row {
+    margin: 0;
+}
