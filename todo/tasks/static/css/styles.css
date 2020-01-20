@@ -24,7 +24,7 @@
 
 /* Lista de tarefas */
 
-.fi-xnsuxl-trash-bin, .fi-xnsuxl-edit-solid {
+.fi-xnsuxl-trash-bin, .fi-xnsuxl-edit-solid, .fi-cwsuxl-check {
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
@@ -143,4 +143,16 @@ ul.messages {
 .change-form-p {
     margin-top: 30px;
     text-align: center;
+}
+
+.task-item.done {
+    background-color: #ccc;
+}
+
+.done .fi-cwsuxl-check {
+    color: #3476e2;
+}
+
+.fi-cwsuxl-check {
+    color: #ccc;
 }

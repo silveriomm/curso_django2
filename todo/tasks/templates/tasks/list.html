@@ -27,11 +27,24 @@
         {% endif %}
         <ul class="task-list">
             {% for task in tasks %}
-            <li class="task-item">
-                <span><a href="/task/{{task.id}}">{{ task.title }}</a></span>
-                <a href="delete/{{task.id}}" class="delete-btn"> <span> <i class="fi-xnsuxl-trash-bin"></i> </span> </a>
-               <a href="edit/{{task.id}}"> <span> <i class="fi-xnsuxl-edit-solid"></i> </span> </a>
-            </li>
+                {% if task.done == 'doing' %}
+                    <li class="task-item">
+                {% else %}
+                    <li class="task-item done"> 
+                {% endif %}
+                    <span>
+                        <a href="/task/{{task.id}}">{{ task.title }}</a>
+                    </span> 
+                    <a href="delete/{{task.id}}" class="delete-btn"> 
+                        <span> <i class="fi-xnsuxl-trash-bin"></i> </span>
+                    </a>
+                    <a href="edit/{{task.id}}"> 
+                        <span> <i class="fi-xnsuxl-edit-solid"></i> </span> 
+                    </a>
+                    <a href="changestatus/{{task.id}}"> 
+                        <span> <i class="fi-cwsuxl-check"></i> </span> 
+                    </a>
+                </li>
             {% endfor %}
         </ul>
         <div class="pagination">
