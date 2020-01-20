@@ -8,8 +8,14 @@ from django.contrib import messages
 @login_required
 def taskList(request):
     search = request.GET.get('search')
+    filter = request.GET.get('filter')
     if search:
         tasks_list = Task.objects.filter(title__icontains=search, user=request.user)
+        paginator = Paginator(tasks_list, 4)
+        page = request.GET.get('page')
+        tasks = paginator.get_page(page)
+    elif filter:
+        tasks_list = Task.objects.filter(done=filter, user=request.user)
         paginator = Paginator(tasks_list, 4)
         page = request.GET.get('page')
         tasks = paginator.get_page(page)

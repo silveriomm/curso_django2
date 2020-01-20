@@ -67,6 +67,19 @@
     display: inline-block;
 }
 
+/* Filter */
+
+.filter-div {
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+#filter {
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+}
+
 .fi-xnsuxl-trash-bin {
     color: #db1e47;
 }
@@ -87,8 +100,10 @@ task-list {
     list-style: none;
     font-size: 20px;
     height: 50px;
+    padding: 0 15px;
     padding-top: 10px;
     border-bottom: 1px dashed #333;
+    border-radius: 5px;
 }
 
 /* Rodapé */
