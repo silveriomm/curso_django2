@@ -22,6 +22,55 @@
     letter-spacing: 1px;
 }
 
+/* Dashboard */
+
+#dashboard-lastdays {
+    border-radius: 5px;
+    background-color: #3476e2;
+}
+
+#dashboard-done {
+    border-radius: 5px;
+    background-color: #13c43f;
+}
+
+#dashboard-doing {
+    border-radius: 5px;
+    background-color: #db1e47;
+}
+
+.dashboard {
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.dashboard h4 {
+    font-size: 20px;
+}
+
+.dashboard span {
+    font-size: 40px;
+    display: block;
+    width: 100%;
+}
+
+.dashboard-box {
+    float: left;
+    background-color: #dfdfdf;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 130px;
+    width: 32%;
+    text-align: center;
+}
+
+.dashboard-box:nth-child(2) {
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
 /* Lista de tarefas */
 
 .fi-xnsuxl-trash-bin, .fi-xnsuxl-edit-solid, .fi-cwsuxl-check {
